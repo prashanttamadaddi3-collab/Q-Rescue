@@ -337,3 +337,7 @@ def get_run_allocations(run_id: int, db_path: str = DB_PATH) -> pd.DataFrame:
     """
     with get_connection(db_path) as conn:
         return pd.read_sql_query(query, conn, params=[run_id])
+        # Ensure the database schema and sample data are ready
+# whenever a Streamlit page imports this module.
+init_db()
+seed_initial_data()
