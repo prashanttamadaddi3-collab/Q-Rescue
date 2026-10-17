@@ -1,0 +1,7 @@
+resource_id,resource_type,total_available_units,allocated_units,unit_cost_or_weight,depot_location
+RES-001,Rescue Teams,35,0,100,Belagavi Central Depot
+RES-002,Inflatable Motor Boats,24,0,150,Chikkodi Water Rescue Depot
+RES-003,Emergency Ambulances,20,0,80,Belagavi District Hospital Base
+RES-004,Food & Water Rations (Truckloads),40,0,50,APMC Godown Raybag
+RES-005,Emergency Medical Kits (Packs),50,0,30,Gokak Civil Hospital Depot
+RES-006,High-Capacity Water Pumps,18,0,120,Khanapur Fire Station Base
