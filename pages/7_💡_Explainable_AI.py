@@ -98,11 +98,11 @@ with tab_qaoa:
     
     st.markdown("#### 1. QUBO Formulation (Quadratic Unconstrained Binary Optimization)")
     st.latex(r"\max_{\vec{x}} \sum_{i=1}^N \left( \alpha \cdot w_i + \beta \cdot \hat{P}_i - \gamma \cdot \hat{D}_i \right) x_i \quad \text{s.t.} \quad \sum_{i=1}^N d_{i, k} x_i \le B_k \quad \forall k")
-    st.markdown("Transformed with quadratic penalty $\lambda$ for capacity budget violations:")
+    st.markdown(r"Transformed with quadratic penalty $\lambda$ for capacity budget violations:")
     st.latex(r"\min_{\vec{x}} E(\vec{x}) = - \sum_{i=1}^N \text{Utility}_i x_i + \sum_k \lambda_k \left( \sum_{i=1}^N d_{i, k} x_i - B_k \right)^2")
     
     st.markdown("#### 2. Mapping to Ising Hamiltonian")
-    st.markdown("Spin operator transformation: $x_i = \frac{I - Z_i}{2}$")
+    st.markdown(r"Spin operator transformation: $x_i = \frac{I - Z_i}{2}$")
     st.latex(r"H_C = \sum_{i=1}^N h_i Z_i + \sum_{i < j} J_{i j} Z_i Z_j, \qquad H_M = \sum_{i=1}^N X_i")
     
     st.markdown("#### 3. Multi-Factor Priority Weightings")
@@ -119,7 +119,7 @@ with tab_viva:
     ---
     
     **Q2: How does QAOA ensure we don't dispatch more boats or teams than are available in Belagavi?**  
-    *Answer:* In our QUBO formulation, capacity constraints $\sum d_{ik} x_i \le B_k$ are converted into quadratic penalty terms $\lambda (\sum d_{ik} x_i - B_k)^2$ inside the cost Hamiltonian $H_C$. Any configuration that exceeds depot inventory incurs a steep energy penalty, driving the quantum state $|\psi(\gamma, \beta)\rangle$ away from infeasible deployment vectors.
+    """ + r"*Answer:* In our QUBO formulation, capacity constraints $\sum d_{ik} x_i \le B_k$ are converted into quadratic penalty terms $\lambda (\sum d_{ik} x_i - B_k)^2$ inside the cost Hamiltonian $H_C$. Any configuration that exceeds depot inventory incurs a steep energy penalty, driving the quantum state $|\psi(\gamma, \beta)\rangle$ away from infeasible deployment vectors." + """
     
     ---
     
