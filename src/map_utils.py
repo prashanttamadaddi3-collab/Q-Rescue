@@ -43,7 +43,7 @@ def generate_flood_risk_map(df: pd.DataFrame,
     m = folium.Map(
         location=BELAGAVI_CENTER,
         zoom_start=9,
-        tiles="CartoDB dark_matter",
+        tiles="OpenStreetMap",
         control_scale=True
     )
     
@@ -107,6 +107,8 @@ def generate_flood_risk_map(df: pd.DataFrame,
             </div>
             """
             
+        pop_str = f"{int(population):,}" if isinstance(population, (int, float)) else str(population)
+        
         popup_html = f"""
         <div style="font-family: sans-serif; min-width: 220px; font-size: 12px; line-height: 1.4;">
             <h4 style="margin: 0 0 4px 0; color: {hex_color};">⚠️ {loc_name} ({taluk})</h4>
@@ -116,7 +118,7 @@ def generate_flood_risk_map(df: pd.DataFrame,
             <p style="margin: 2px 0;"><b>Rainfall:</b> {rainfall} mm</p>
             <p style="margin: 2px 0;"><b>River Water Level:</b> {water_level} m</p>
             <p style="margin: 2px 0;"><b>Elevation:</b> {elevation} m</p>
-            <p style="margin: 2px 0;"><b>Population:</b> {population:, if isinstance(population, (int, float)) else population}</p>
+            <p style="margin: 2px 0;"><b>Population:</b> {pop_str}</p>
             <p style="margin: 2px 0;"><b>Distance to Base:</b> {dist} km</p>
             {alloc_html}
         </div>
